@@ -1,4 +1,4 @@
 
-  export const MarketPlaceAddress = "0xb9a0a720f33C92A1daCE069f9E0F8a65F4b68cEe"
+  export const MarketPlaceAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
 
   

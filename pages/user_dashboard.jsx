@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import web3 from "web3";
 import { useRouter } from "next/router";
+import BackgroundImage from "next/image";
 import {
   AppContextProps,
   BlockchainContext,
@@ -19,7 +20,8 @@ const Card = (props) => {
   console.log(props, " is props");
   console.log(parseInt(props?.element?.price?._hex), " is porps");
   return (
-    <div className="bg-blue-500 pl-1 w-72 h-20 rounded-lg shadow-md">
+    
+    <div className="bg-green-500 pl-1 w-72 h-30 rounded-lg shadow-md">
       <div className="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
         <div className="my-auto">
           <p className="font-bold">
@@ -29,7 +31,7 @@ const Card = (props) => {
             {props?.element
               ? parseInt(props?.element?.price?._hex)
               : "Price #..."}
-            &nbsp;Eth &nbsp;&nbsp; &nbsp;Id:&nbsp;
+            &nbsp;Units &nbsp;&nbsp; &nbsp;Id:&nbsp;
             {props?.element
               ? parseInt(props?.element.productId._hex)
               : "Price #..."}
@@ -59,7 +61,7 @@ const Card = (props) => {
 const ICard = (props) => {
   console.log(props.element[3][2], " is dfS");
   return (
-    <div className="bg-blue-500 pl-1 w-72 h-20 rounded-lg shadow-md">
+    <div className="bg-green-500 pl-1 w-72 h-30 rounded-lg shadow-md">
       <div className="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
         <div className="my-auto">
           <p className="font-bold">
@@ -69,9 +71,10 @@ const ICard = (props) => {
             {props?.element
               ? parseInt(props?.element?.amount?._hex)
               : "Price #..."}
-            &nbsp;Eth &nbsp;&nbsp; &nbsp;Id:&nbsp;
+            &nbsp;Units &nbsp;&nbsp; &nbsp;Id:&nbsp;
             {props?.element ? parseInt(props?.element.id._hex) : "Price #..."}
-            &nbsp;&nbsp; &nbsp;Span:&nbsp;
+            &nbsp;&nbsp; &nbsp;  <br/>
+            Seller : &nbsp;
             {props?.element ? props?.element.buyer.pan : "Price #..."}
           </p>
         </div>
@@ -171,19 +174,19 @@ function User_dashboard() {
                   height={200}
                   width={200}
                 />
-                <h5 className=" mx-14 mb-1 text-xl font-medium text-center">
+                <h5 className="mb-1 text-xl text-center font-medium  dark:text-black">
                   {ans ? ans[2] : "Bonnie Green"}
                 </h5>
-                <span className="  mx-14 text-sm text-gray-500 dark:text-gray-400">
+                <h5 className="text-sm text-gray-500 text-center dark:text-gray-400">
                   {ans ? ans[3] : "Pan number"}
-                </span>
+                </h5>
               </div>
 
               <div className=" md:w-1/2 mx-12 ">
                 <p className="text-center">Buy a product</p>
                 <div className="flex justify-center mt-4 space-x-3 lg:mt-6">
                   <input
-                    className="w-full px-1 py-2 text-sm  bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:focus:outline-none dark:focus:ring-2 dark:focus:ring-blue-500"
+                    className="w-full px-1 py-2 text-sm  bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400 dark:focus:outline-none dark:focus:ring-2 dark:focus:ring-green-500"
                     type="number"
                     placeholder="Product Id"
                     value={productId}
@@ -192,7 +195,7 @@ function User_dashboard() {
                 </div>
                 <div className="flex justify-center mt-4 mb-4 space-x-3 lg:mt-6">
                   <button
-                    className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                     onClick={() => {
                       console.log("clicked");
                       buyProduct();

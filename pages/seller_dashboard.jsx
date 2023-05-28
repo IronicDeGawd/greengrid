@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import web3 from "web3";
 import { useRouter } from "next/router";
+import BackgroundImage from "next/image";
 import {
   AppContextProps,
   BlockchainContext,
@@ -14,7 +15,8 @@ const Card = (props) => {
   console.log(props, " is props");
   console.log(parseInt(props?.element.price._hex), " is porps");
   return (
-    <div className="bg-blue-500 pl-1 w-72 h-20 rounded-lg shadow-md">
+    
+    <div className="bg-green-500 pl-1 w-72 h-20 rounded-lg shadow-md">
       <div className="flex w-full h-full py-2 px-4 bg-white rounded-lg justify-between">
         <div className="my-auto">
           <p className="font-bold">
@@ -24,7 +26,7 @@ const Card = (props) => {
             {props?.element
               ? parseInt(props?.element.price._hex)
               : "Price #..."}
-            &nbsp;Eth &nbsp;&nbsp; &nbsp;Id:&nbsp;
+            &nbsp;Units &nbsp; 
             {props?.element
               ? parseInt(props?.element.productId._hex)
               : "Price #..."}
@@ -118,16 +120,16 @@ function Seller_dashboard() {
               <div className=" md:w-1/2 mx-12 ">
                 <div className="flex mt-4 space-x-3 lg:mt-6">
                   <input
-                    className="w-full px-4 py-2 text-sm text-black bg-gray-100  border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:focus:outline-none dark:focus:ring-2 dark:focus:ring-blue-500"
+                    className="w-full px-4 py-2 text-sm text-black bg-gray-100  border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-green-400 dark:focus:outline-none dark:focus:ring-2 dark:focus:ring-green-500"
                     type="number"
-                    placeholder="Price"
+                    placeholder="Energy Credits"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                   />
                 </div>
                 <div className="flex mt-4 space-x-3 lg:mt-6">
                   <input
-                    className="w-full px-4 py-2 text-sm text-black bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:focus:outline-none dark:focus:ring-2 dark:focus:ring-blue-500"
+                    className="w-full px-4 py-2 text-sm text-black bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400 dark:focus:outline-none dark:focus:ring-2 dark:focus:ring-blue-500"
                     type="text"
                     placeholder="Name"
                     value={productName}
@@ -136,7 +138,7 @@ function Seller_dashboard() {
                 </div>
                 <div className="flex mt-4 space-x-3 lg:mt-6">
                   <button
-                    className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                     onClick={() => {
                       console.log("clicked");
                       addProduct();

@@ -8,7 +8,7 @@ module.exports = {
         OurBlue: "#2BB2CC",
         OurPurple: "#7A5BB1",
         OurSecondGrey: "#424242",
-        OurGreen: "#14FF00",
+        ourgreen: "#d9f99d",
       },
       dropShadow: {
         white: ["0 35px 35px rgba(0, 0, 0, 0.55)"],
